@@ -1,6 +1,6 @@
 export function Spinner() {
   return (
-    <div role="status">
+    <div className="mid-div" role="status">
       <svg
         aria-hidden="true"
         className="w-32 h-32 text-gray-200 animate-spin dark:text-gray-600 fill-dark-purple"

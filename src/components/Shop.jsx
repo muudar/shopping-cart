@@ -9,7 +9,7 @@ function Shop() {
   const [categories, setCategories] = useState([]);
   const [searchCategory, setSearchCategory] = useState("all");
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/", { mode: "cors" })
+    fetch("https://dummyjson.com/products", { mode: "cors" })
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("Error while fetching");
@@ -18,10 +18,10 @@ function Shop() {
       })
       .then((response) => {
         setError(false);
-        setItems(response);
+        setItems(response["products"]);
         let categoriesObj = {};
         categoriesObj["all"] = 0;
-        for (let item of response) {
+        for (let item of response["products"]) {
           let cat = item["category"];
           categoriesObj["all"]++;
           if (!categoriesObj[cat]) {
@@ -32,11 +32,14 @@ function Shop() {
         }
         setCategories(categoriesObj);
       })
-      .catch((error) => setError(error))
+      .catch((error) => {
+        console.log(error);
+        setError(error);
+      })
       .finally(() => setLoading(false));
   }, []);
   return (
-    <main className="flex justify-center items-center">
+    <div>
       {loading ? (
         <Spinner />
       ) : error ? (
@@ -49,9 +52,10 @@ function Shop() {
           searchCategory={searchCategory}
           setSearchCategory={setSearchCategory}
           categories={categories}
+          items={items}
         ></ShopMain>
       )}
-    </main>
+    </div>
   );
 }
 
