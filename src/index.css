@@ -5,3 +5,7 @@
 main {
   height: calc(100vh - 11.75rem);
 }
+
+.side-bar {
+  height: calc(100vh - 11.75rem);
+}
