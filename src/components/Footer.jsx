@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <div className="p-6 text-white text-2xl absolute bottom-0 flex w-screen bg-dark-purple justify-center">
+    <footer className="p-6 text-white text-2xl absolute bottom-0 flex w-screen bg-dark-purple justify-center">
       Developed by&nbsp;
       <div className="mt-1">
         <a href="https://github.com/muudar">
@@ -13,6 +13,6 @@ export function Footer() {
       &nbsp;
       <a href="https://github.com/muudar">muudar</a>
       &nbsp;
-    </div>
+    </footer>
   );
 }

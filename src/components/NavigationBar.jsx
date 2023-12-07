@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function NavigationBar({ cartState, setCartState }) {
   return (
-    <div className="text-white flex justify-between bg-dark-purple py-10 px-3 sm:px-10">
+    <nav className="text-white flex justify-between bg-dark-purple py-10 px-3 sm:px-10">
       <div className="text-xl font-bold sm:text-3xl">SwiftCartz</div>
       <ul className="flex justify-between text-lg [&>li]:px-2  sm:text-2xl sm:[&>li]:px-5">
         <li>
@@ -43,7 +43,7 @@ function NavigationBar({ cartState, setCartState }) {
           </div>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }
 
