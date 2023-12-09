@@ -4,14 +4,21 @@ import { Outlet, createBrowserRouter, RouterProvider } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar.jsx";
 import Home from "./components/Home.jsx";
 import Shop from "./components/Shop.jsx";
+import { useState } from "react";
 
-const Layout = () => (
-  <>
-    <NavigationBar />
-    <Outlet />
-    <Footer />
-  </>
-);
+function Layout() {
+  const [cartState, setCartState] = useState({
+    overlay: false,
+    items: [],
+  });
+  return (
+    <>
+      <NavigationBar cartState={cartState} setCartState={setCartState} />
+      <Outlet context={cartState} />
+      <Footer />
+    </>
+  );
+}
 
 const router = createBrowserRouter([
   {

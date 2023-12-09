@@ -1,8 +1,12 @@
 import ShopMain from "./ShopMain";
 import { Spinner } from "./Spinner";
 import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
+import CartOverlay from "./CartOverlay";
 
 function Shop() {
+  const cartState = useOutletContext();
+  console.log(cartState);
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -39,23 +43,26 @@ function Shop() {
       .finally(() => setLoading(false));
   }, []);
   return (
-    <div>
-      {loading ? (
-        <Spinner />
-      ) : error ? (
-        <div className="text-red text-2xl">
-          An unexpected error has occured! Please try again.
-        </div>
-      ) : null}
-      {items.length > 0 && (
-        <ShopMain
-          searchCategory={searchCategory}
-          setSearchCategory={setSearchCategory}
-          categories={categories}
-          items={items}
-        ></ShopMain>
-      )}
-    </div>
+    <>
+      <div>
+        {loading ? (
+          <Spinner />
+        ) : error ? (
+          <div className="text-red text-2xl">
+            An unexpected error has occured! Please try again.
+          </div>
+        ) : null}
+        {items.length > 0 && (
+          <ShopMain
+            searchCategory={searchCategory}
+            setSearchCategory={setSearchCategory}
+            categories={categories}
+            items={items}
+          ></ShopMain>
+        )}
+        {cartState.overlay == true ? <CartOverlay></CartOverlay> : null}
+      </div>
+    </>
   );
 }
 

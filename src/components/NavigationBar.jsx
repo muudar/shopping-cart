@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-
 function NavigationBar({ cartState, setCartState }) {
   return (
     <nav className="text-white flex justify-between bg-dark-purple py-10 px-3 sm:px-10">
@@ -35,9 +34,14 @@ function NavigationBar({ cartState, setCartState }) {
           <div
             className="cursor-pointer"
             style={{
-              color: cartState ? "red" : "",
+              color: cartState.overlay ? "red" : "white",
             }}
-            onClick={() => setCartState(!cartState)}
+            onClick={() =>
+              setCartState({
+                ...cartState,
+                overlay: !cartState.overlay,
+              })
+            }
           >
             Cart
           </div>
