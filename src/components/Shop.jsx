@@ -5,8 +5,7 @@ import { useOutletContext } from "react-router-dom";
 import CartOverlay from "./CartOverlay";
 
 function Shop() {
-  const cartState = useOutletContext();
-  console.log(cartState);
+  const context = useOutletContext();
   const [items, setItems] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -60,7 +59,7 @@ function Shop() {
             items={items}
           ></ShopMain>
         )}
-        {cartState.overlay == true ? <CartOverlay></CartOverlay> : null}
+        {context.cartState.overlay == true ? <CartOverlay></CartOverlay> : null}
       </div>
     </>
   );

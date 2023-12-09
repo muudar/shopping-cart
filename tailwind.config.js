@@ -8,6 +8,7 @@ export default {
       black: "#000000",
       grey: "#808080",
       red: "#FF0000",
+      gainsboro: "	#DCDCDC",
       "light-grey": "#C8C8C8",
       "dark-purple": "#5f19f5",
       "light-purple": "#713ABE",

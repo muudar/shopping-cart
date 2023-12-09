@@ -58,3 +58,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.cart-overlay {
+  height: calc(100vh - 11.75rem);
+}
+
+.home-screen {
+  height: calc(100vh - 11.75rem);
+}

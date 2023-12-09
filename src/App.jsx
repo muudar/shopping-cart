@@ -14,7 +14,12 @@ function Layout() {
   return (
     <>
       <NavigationBar cartState={cartState} setCartState={setCartState} />
-      <Outlet context={cartState} />
+      <Outlet
+        context={{
+          cartState,
+          setCartState,
+        }}
+      />
       <Footer />
     </>
   );
