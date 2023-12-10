@@ -34,10 +34,10 @@ Explore the shopping cart functionalities and test different scenarios.
 ## Project Structure
 The project follows a basic React project structure:
 
-*src/: Contains the source code for the React application.
-*components/: React components used in the application.
-*App.js: Main application component.
-*index.js: Entry point of the application.
+* 'src/:' Contains the source code for the React application.
+* 'components/:' React components used in the application.
+* 'App.js:' Main application component.
+* 'index.js:' Entry point of the application.
 ## Technologies Used
 *React
 *JavaScript (ES6+)
