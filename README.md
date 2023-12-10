@@ -5,8 +5,8 @@ Welcome to the Shopping Cart project! This project is part of The Odin Project c
 This project is a simplified shopping cart application designed to help you practice fundamental concepts in React. It includes essential functionalities such as adding items to the cart, and loading store items after fetching them from an API. Keep in mind that this is not a fully functional e-commerce site; instead, it focuses on honing your React skills.
 
 ## Features (as of version 1.0.0)
-*Add items to the cart
-*View the total price of items in the cart
+* Add items to the cart
+* View the total price of items in the cart
 
 ## Installation
 Clone the repository to your local machine:
@@ -39,8 +39,8 @@ The project follows a basic React project structure:
 * 'App.js:' Main application component.
 * 'index.js:' Entry point of the application.
 ## Technologies Used
-*React
-*JavaScript (ES6+)
+* React
+* JavaScript (ES6+)
 
 ## Contributing
 Contributions are welcome! If you have suggestions, bug reports, or want to contribute to the project, please open an issue or submit a pull request.
